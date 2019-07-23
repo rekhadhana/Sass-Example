@@ -1,0 +1,88 @@
+// variables
+// $color-primary:#4BA0ED;
+// $color-accent:#67E6DC;
+$colors:(
+    primary:#4834DFED,
+    accent:#67E6DC,
+    font:#fff
+);
+@function color($colorName){
+    @return map-get($map:$colors ,$key :$colorName )
+}
+ $sizes:(
+     fontone:20px,
+     fontTwo:30px,
+     fontzero:10px
+ );
+ @function font($size){
+     @return map-get($map: $sizes,$key :$size )
+ }
+body,html{
+   height: 100%;
+}
+body{
+    // to make all padding and margines 0n use normalize.css
+    // or
+
+    margin: 0;
+    .container{
+        -webkit-clip-path: polygon(50% 0%, 99% 4%, 100% 63%, 50% 100%, 0 92%, 0 0);
+        clip-path: polygon(50% 0%, 99% 4%, 100% 63%, 50% 100%, 0 92%, 0 0);
+                
+    background-color:color(primary);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    }
+    header{
+        a{
+            color:color(font);
+            text-decoration: none;
+            font-size: 1.5rem;
+            text-align:center;
+            padding-top: 20px;
+            display: block;
+
+        }
+    }
+}
+main{
+    section#mainimage{
+        background-color: color(accent);
+        padding:20px;
+        margin: 1em auto;
+        width: 80%;
+        color:color(font);
+        border-radius: 15px;
+    }
+    p{
+        margin:0;
+        padding: 0;
+        text-align: center;
+        margin-bottom: -15;
+    }
+    section#mainbutton{
+        color: color(font);
+        padding: 15px;
+        text-align: center;
+        h1{
+            font-size:1.8em;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+        p{
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        a{
+            margin-top: 15px;
+            color: color(font);
+            background-color: color(accent);
+            padding: 5px 55px;
+            text-decoration: none;
+            font-size: 1.5em;
+            border-radius:5px;
+        }
+    }
+}

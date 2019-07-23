@@ -1,0 +1,45 @@
+@import'btn';
+
+//-------importing mixin
+@import "mixins";//'_'is not required here
+html{
+    height: 100vh;//view port height
+//_____we all the down stuff in mixins ------------------
+
+    //     background-image: url('images/cover.jpg');//this images should be ralative to about.html not relative to ssasss file
+// background-size: cover;
+// background-repeat: no-repeat;
+// background-position: center center;
+
+//-----calling mixins
+@include coverimage('images/cover2.jpg');
+
+}
+body{
+   h1{
+       color:#F5F510;
+       text-align: center;
+       margin-top: 5%;
+       font-size: 3rem;
+
+   } 
+   p{
+       color: #EADEDE;
+       text-align:center;
+       font-size: 2rem; 
+   }
+}
+.container{
+    text-align: center;
+}
+//extending or inheritance
+.btn-youtube{
+    // we use % symbor for generalized class
+    @extend %btn;
+    background-color: red;
+
+}
+.btn-courses{
+    @extend %btn;
+    background-color: #084A08;
+}
